@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-<title>OPERATOR_042 // SYSTEM_SPA</title>
+<title>OPERADOR_042 // SISTEMA_SPA</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -150,7 +150,6 @@
             transition: opacity 0.3s ease;
         }
 
-        /* Prevent layout horizontal bleed */
         main {
             width: 100%;
             max-width: 100vw;
@@ -165,36 +164,36 @@
     </style>
 </head>
 <body class="text-on-surface selection:bg-accent-cyan selection:text-bg-deep overflow-x-hidden min-h-screen flex flex-col">
-<!-- Scrim & Modal Layer -->
+<!-- Capa de Scrim y Modal -->
 <div class="fixed inset-0 bg-surface/60 z-[150] hidden opacity-0" id="scrim" onclick="closeSettingsModal()"></div>
-<!-- Top AppBar -->
+<!-- AppBar Superior -->
 <header class="fixed top-0 w-full backdrop-blur-md bg-surface/80 border-b border-accent-cyan-dim z-[100] flex justify-between items-center px-margin-mobile h-16">
 <div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-accent-cyan" data-icon="terminal">terminal</span>
-<h1 class="font-display text-xl uppercase tracking-tighter text-accent-cyan" id="app-title">OPERATOR_042</h1>
+<h1 class="font-display text-xl uppercase tracking-tighter text-accent-cyan" id="app-title">OPERADOR_042</h1>
 </div>
 <div class="flex items-center gap-4">
-<span class="font-mono text-[10px] text-ink-muted animate-pulse hidden xs:block">SYS_OK</span>
+<span class="font-mono text-[10px] text-ink-muted animate-pulse hidden xs:block">SIS_OK</span>
 <button class="material-symbols-outlined text-accent-cyan text-xl p-2 hover:bg-accent-cyan/10 rounded-full transition-colors" data-icon="settings" id="btn-settings" onclick="openSettingsModal()">settings</button>
 </div>
 </header>
-<!-- Settings Modal -->
+<!-- Modal de Ajustes -->
 <div class="fixed inset-x-margin-mobile top-1/2 -translate-y-1/2 z-[200] hidden bg-bg-panel border border-accent-cyan p-6 shadow-2xl space-y-6 max-w-md mx-auto" id="settings-modal">
 <div class="flex justify-between items-center border-b border-accent-cyan-dim pb-3">
-<h2 class="font-display text-accent-cyan tracking-widest text-sm uppercase">Global_Settings</h2>
+<h2 class="font-display text-accent-cyan tracking-widest text-sm uppercase">Configuración_Global</h2>
 <button class="material-symbols-outlined text-accent-cyan" onclick="closeSettingsModal()">close</button>
 </div>
 <div class="space-y-4">
 <div>
-<label class="font-mono text-[9px] text-ink-muted mb-1 block">ANTHROPIC_API_KEY</label>
+<label class="font-mono text-[9px] text-ink-muted mb-1 block">CLAVE_API_ANTHROPIC</label>
 <div class="flex gap-2">
 <input class="flex-grow bg-bg-deep border border-accent-cyan-dim text-accent-cyan font-mono text-[11px] px-3 py-2 outline-none focus:border-accent-cyan" id="api-key-input" placeholder="sk-ant-..." type="password"/>
-<button class="bg-accent-cyan text-bg-deep font-mono text-[10px] px-3 py-2 font-bold hover:bg-primary transition-colors" onclick="saveApiKey()">SAVE</button>
+<button class="bg-accent-cyan text-bg-deep font-mono text-[10px] px-3 py-2 font-bold hover:bg-primary transition-colors" onclick="saveApiKey()">GUARDAR</button>
 </div>
-<p class="font-mono text-[8px] text-ink-muted mt-2">Stored locally in Browser Cache (localStorage).</p>
+<p class="font-mono text-[8px] text-ink-muted mt-2">Almacenado localmente en el caché del navegador (localStorage).</p>
 </div>
 <div>
-<label class="font-mono text-[9px] text-ink-muted mb-1 block">PREFERRED_MODEL</label>
+<label class="font-mono text-[9px] text-ink-muted mb-1 block">MODELO_PREFERIDO</label>
 <select class="w-full bg-bg-deep border border-accent-cyan-dim text-accent-cyan font-mono text-[11px] px-3 py-2 focus:border-accent-cyan outline-none">
 <option>CLAUDE_3_5_SONNET</option>
 <option>CLAUDE_3_OPUS</option>
@@ -203,123 +202,162 @@
 </div>
 </div>
 <div class="pt-2">
-<button class="w-full border border-accent-cyan-dim text-ink-muted font-mono text-[10px] py-2 uppercase hover:text-accent-cyan hover:border-accent-cyan transition-colors" onclick="closeSettingsModal()">Close Overlay</button>
+<button class="w-full border border-accent-cyan-dim text-ink-muted font-mono text-[10px] py-2 uppercase hover:text-accent-cyan hover:border-accent-cyan transition-colors" onclick="closeSettingsModal()">Cerrar Capa</button>
 </div>
 </div>
-<!-- Main Content SPA -->
+<!-- Contenido Principal SPA -->
 <main class="flex-1 mt-16 pb-24 overflow-y-auto custom-scrollbar">
-<!-- DASHBOARD TAB -->
+<!-- PESTAÑA PANEL (DASHBOARD) -->
 <section class="tab-content active p-margin-mobile space-y-6" id="tab-dashboard">
 <div class="grid grid-cols-2 gap-4">
 <div class="bg-bg-panel border border-accent-cyan-dim p-4 relative overflow-hidden">
 <div class="reg-tl registration-mark"></div><div class="reg-tr registration-mark"></div>
-<p class="font-mono text-[10px] text-ink-muted mb-1 uppercase">Metric_01</p>
+<p class="font-mono text-[10px] text-ink-muted mb-1 uppercase">Métrica_01</p>
 <h2 class="font-display text-2xl text-accent-cyan">142</h2>
-<p class="font-mono text-[9px] text-accent-cyan-dim uppercase tracking-wider">Optimised</p>
+<p class="font-mono text-[9px] text-accent-cyan-dim uppercase tracking-wider">Optimizado</p>
 </div>
 <div class="bg-bg-panel border border-accent-cyan-dim p-4 relative overflow-hidden">
 <div class="reg-tl registration-mark"></div><div class="reg-tr registration-mark"></div>
-<p class="font-mono text-[10px] text-ink-muted mb-1 uppercase">Metric_02</p>
+<p class="font-mono text-[10px] text-ink-muted mb-1 uppercase">Métrica_02</p>
 <h2 class="font-display text-2xl text-accent-cyan">98.4%</h2>
-<p class="font-mono text-[9px] text-accent-cyan-dim uppercase tracking-wider">Success</p>
+<p class="font-mono text-[9px] text-accent-cyan-dim uppercase tracking-wider">Éxito</p>
 </div>
 </div>
 <div class="space-y-4">
 <h3 class="font-display text-sm tracking-widest text-accent-cyan flex items-center gap-2">
-<span class="w-4 h-[1px] bg-accent-cyan"></span> ACTIVE_PROJECTS
+<span class="w-4 h-[1px] bg-accent-cyan"></span> PROYECTOS_ACTIVOS
                 </h3>
 <div class="flex overflow-x-auto gap-4 pb-4 custom-scrollbar snap-x no-scrollbar">
 <div class="min-w-[280px] snap-start bg-bg-panel border border-accent-cyan-dim p-5 relative overflow-hidden group">
 <div class="absolute -top-2 -right-2 opacity-5 group-hover:opacity-20 transition-opacity">
 <span class="material-symbols-outlined text-7xl" data-icon="shopping_cart">shopping_cart</span>
 </div>
-<div class="font-mono text-[10px] text-stamp-orange mb-1">STATUS: ACTIVE</div>
-<h4 class="font-display text-lg mb-4 text-ink-paper">E-commerce Bot</h4>
+<div class="font-mono text-[10px] text-stamp-orange mb-1">ESTADO: ACTIVO</div>
+<h4 class="font-display text-lg mb-4 text-ink-paper">Bot E-commerce</h4>
 <div class="blueprint-dashed h-20 mb-4 flex items-center justify-center border border-accent-cyan-dim/20">
-<span class="font-mono text-[9px] text-accent-cyan-dim">V2.4.1-STABLE</span>
+<span class="font-mono text-[9px] text-accent-cyan-dim">V2.4.1-ESTABLE</span>
 </div>
-<button class="w-full bg-accent-cyan text-bg-deep font-mono text-[11px] py-2.5 font-bold hover:brightness-110 active:scale-[0.98] transition-all" onclick="switchTab('editor')">OPEN_PROMPT</button>
+<button class="w-full bg-accent-cyan text-bg-deep font-mono text-[11px] py-2.5 font-bold hover:brightness-110 active:scale-[0.98] transition-all" onclick="switchTab('editor')">ABRIR_PROMPT</button>
 </div>
 <div class="min-w-[280px] snap-start bg-bg-panel border border-accent-cyan-dim p-5 relative overflow-hidden group">
 <div class="absolute -top-2 -right-2 opacity-5 group-hover:opacity-20 transition-opacity">
 <span class="material-symbols-outlined text-7xl" data-icon="edit_note">edit_note</span>
 </div>
-<div class="font-mono text-[10px] text-accent-cyan-dim mb-1">STATUS: IDLE</div>
-<h4 class="font-display text-lg mb-4 text-ink-paper">Data Analyst</h4>
+<div class="font-mono text-[10px] text-accent-cyan-dim mb-1">ESTADO: INACTIVO</div>
+<h4 class="font-display text-lg mb-4 text-ink-paper">Analista de Datos</h4>
 <div class="blueprint-dashed h-20 mb-4 flex items-center justify-center border border-accent-cyan-dim/20">
-<span class="font-mono text-[9px] text-accent-cyan-dim">V4.2.0-STABLE</span>
+<span class="font-mono text-[9px] text-accent-cyan-dim">V4.2.0-ESTABLE</span>
 </div>
-<button class="w-full border border-accent-cyan text-accent-cyan font-mono text-[11px] py-2.5 hover:bg-accent-cyan/10 transition-all" onclick="switchTab('editor')">LOAD_ARCHIVE</button>
+<button class="w-full border border-accent-cyan text-accent-cyan font-mono text-[11px] py-2.5 hover:bg-accent-cyan/10 transition-all" onclick="switchTab('editor')">CARGAR_ARCHIVO</button>
+</div>
+</div>
+</div>
+<!-- NUEVA SECCIÓN: GUÍA_DE_USO_RÁPIDO -->
+<div class="space-y-4">
+<h3 class="font-display text-sm tracking-widest text-accent-cyan flex items-center gap-2">
+<span class="w-4 h-[1px] bg-accent-cyan"></span> GUÍA_DE_USO_RÁPIDO
+                </h3>
+<div class="bg-bg-panel border border-accent-cyan-dim p-5 space-y-4 relative overflow-hidden">
+<div class="reg-tl registration-mark"></div><div class="reg-br registration-mark"></div>
+<div class="grid grid-cols-1 gap-3">
+<div class="flex items-start gap-4 p-3 bg-bg-deep/40 border border-dashed border-accent-cyan/30">
+<span class="font-display text-accent-cyan font-bold">01</span>
+<div class="space-y-1">
+<p class="font-mono text-[11px] font-bold text-accent-cyan uppercase tracking-tighter">CONFIGURACIÓN</p>
+<p class="font-body-sm text-[12px] text-ink-muted">Introduce tu clave de API de Anthropic en la pestaña de Ajustes (⚙️).</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-3 bg-bg-deep/40 border border-dashed border-accent-cyan/30">
+<span class="font-display text-accent-cyan font-bold">02</span>
+<div class="space-y-1">
+<p class="font-mono text-[11px] font-bold text-accent-cyan uppercase tracking-tighter">EDITOR</p>
+<p class="font-body-sm text-[12px] text-ink-muted">Redacta tu instrucción o pega una idea base en el Editor Avanzado.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-3 bg-bg-deep/40 border border-dashed border-accent-cyan/30">
+<span class="font-display text-accent-cyan font-bold">03</span>
+<div class="space-y-1">
+<p class="font-mono text-[11px] font-bold text-accent-cyan uppercase tracking-tighter">VARIABLES</p>
+<p class="font-body-sm text-[12px] text-ink-muted">(Opcional) Define variables dinámicas usando corchetes <span class="text-accent-cyan">[COMO_ESTA]</span>.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-3 bg-bg-deep/40 border border-dashed border-accent-cyan/30">
+<span class="font-display text-accent-cyan font-bold">04</span>
+<div class="space-y-1">
+<p class="font-mono text-[11px] font-bold text-accent-cyan uppercase tracking-tighter">EJECUCIÓN</p>
+<p class="font-body-sm text-[12px] text-ink-muted">Pulsa 'Ejecutar' para generar resultados y comparar métricas de rendimiento.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="space-y-4">
 <h3 class="font-display text-sm tracking-widest text-accent-cyan flex items-center gap-2">
-<span class="w-4 h-[1px] bg-accent-cyan"></span> RECENT_HISTORY
+<span class="w-4 h-[1px] bg-accent-cyan"></span> HISTORIAL_RECIENTE
                 </h3>
 <div class="space-y-3">
 <div class="bg-surface-variant/20 border border-accent-cyan-dim/40 p-4 flex items-center gap-4 hover:bg-surface-variant/40 transition-colors">
 <span class="material-symbols-outlined text-accent-cyan text-2xl" data-icon="history_edu">history_edu</span>
 <div class="flex-grow">
-<p class="font-display text-sm text-ink-paper">Customer Sentiment v2</p>
+<p class="font-display text-sm text-ink-paper">Sentimiento Cliente v2</p>
 <p class="font-mono text-[9px] text-ink-muted">2023-10-24 14:32</p>
 </div>
-<span class="border border-dashed border-accent-cyan/50 text-[8px] px-2 py-0.5 text-accent-cyan font-mono rounded">ANALYTICAL</span>
+<span class="border border-dashed border-accent-cyan/50 text-[8px] px-2 py-0.5 text-accent-cyan font-mono rounded">ANALÍTICO</span>
 </div>
 <div class="bg-surface-variant/20 border border-accent-cyan-dim/40 p-4 flex items-center gap-4 hover:bg-surface-variant/40 transition-colors">
 <span class="material-symbols-outlined text-accent-cyan text-2xl" data-icon="auto_awesome">auto_awesome</span>
 <div class="flex-grow">
-<p class="font-display text-sm text-ink-paper">Blog Outline Gen</p>
+<p class="font-display text-sm text-ink-paper">Esquema de Blog Gen</p>
 <p class="font-mono text-[9px] text-ink-muted">2023-10-24 11:15</p>
 </div>
-<span class="border border-dashed border-accent-cyan/50 text-[8px] px-2 py-0.5 text-accent-cyan font-mono rounded">CREATIVE</span>
+<span class="border border-dashed border-accent-cyan/50 text-[8px] px-2 py-0.5 text-accent-cyan font-mono rounded">CREATIVO</span>
 </div>
 </div>
 </div>
 </section>
-<!-- EDITOR TAB -->
+<!-- PESTAÑA EDITOR -->
 <section class="tab-content p-margin-mobile space-y-6" id="tab-editor">
 <div class="bg-bg-panel border border-accent-cyan-dim p-2 flex items-center justify-between">
 <div class="flex gap-2">
 <button class="bg-bg-deep border border-accent-cyan-dim px-3 py-1 font-mono text-[10px] text-accent-cyan hover:bg-accent-cyan/10 transition-colors" onclick="injectVariable()">+ [VAR]</button>
-<button class="bg-bg-deep border border-accent-cyan-dim px-3 py-1 font-mono text-[10px] text-accent-cyan hover:bg-accent-cyan/10 transition-colors">RECALL</button>
+<button class="bg-bg-deep border border-accent-cyan-dim px-3 py-1 font-mono text-[10px] text-accent-cyan hover:bg-accent-cyan/10 transition-colors">RECUPERAR</button>
 </div>
 <div class="font-mono text-[9px] text-ink-muted uppercase tracking-tighter">Editor_v3.0</div>
 </div>
 <div class="relative bg-bg-deep border border-accent-cyan-dim min-h-[400px] p-6 flex flex-col shadow-inner">
-<div class="absolute top-2 right-4 font-mono text-[9px] text-accent-cyan/40">LN: 001 // MODE: MD_EXT</div>
-<div class="flex-grow font-mono text-[14px] leading-relaxed text-ink-paper outline-none whitespace-pre-wrap selection:bg-accent-cyan/30" contenteditable="true" id="editor-pane">Act as a <span class="syntax-bracket">[</span><span class="syntax-variable" title="Senior Developer, Tech Lead">SENIOR_DEV_ROLE</span><span class="syntax-bracket">]</span>. 
-Your objective is to optimize the <span class="syntax-bracket">[</span><span class="syntax-variable" title="Insert code block here">CODEBASE_SNIPPET</span><span class="syntax-bracket">]</span> for peak performance and readability. 
+<div class="absolute top-2 right-4 font-mono text-[9px] text-accent-cyan/40">LN: 001 // MODO: MD_EXT</div>
+<div class="flex-grow font-mono text-[14px] leading-relaxed text-ink-paper outline-none whitespace-pre-wrap selection:bg-accent-cyan/30" contenteditable="true" id="editor-pane">Actúa como un <span class="syntax-bracket">[</span><span class="syntax-variable" title="Desarrollador Senior, Líder Técnico">SENIOR_DEV_ROLE</span><span class="syntax-bracket">]</span>. 
+Tu objetivo es optimizar el <span class="syntax-bracket">[</span><span class="syntax-variable" title="Insertar bloque de código aquí">CODEBASE_SNIPPET</span><span class="syntax-bracket">]</span> para el máximo rendimiento y legibilidad. 
 
-Begin execution...</div>
+Comenzar ejecución...</div>
 <div class="mt-8 space-y-3">
 <button class="w-full bg-stamp-orange text-bg-deep font-display font-bold py-4 text-sm flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.99] transition-all shadow-lg" onclick="simulateExecution()">
-<span class="material-symbols-outlined text-lg">bolt</span> EXECUTE_GENERATION
+<span class="material-symbols-outlined text-lg">bolt</span> EJECUTAR_GENERACIÓN
                     </button>
 <button class="w-full border border-accent-cyan text-accent-cyan font-display py-3 text-sm flex items-center justify-center gap-2 hover:bg-accent-cyan/10 transition-all">
-<span class="material-symbols-outlined text-lg">auto_fix_high</span> REFINE_PROMPT
+<span class="material-symbols-outlined text-lg">auto_fix_high</span> REFINAR_PROMPT
                     </button>
 </div>
 </div>
 <div class="hidden animate-in fade-in slide-in-from-bottom-4 duration-300" id="variable-config">
 <div class="bg-bg-panel border border-accent-cyan p-4 space-y-4">
-<h4 class="font-mono text-[10px] text-accent-cyan uppercase tracking-widest">Variable_Config_Override</h4>
+<h4 class="font-mono text-[10px] text-accent-cyan uppercase tracking-widest">Sobrescritura_Config_Variables</h4>
 <div class="space-y-3">
-<label class="font-mono text-[9px] text-ink-muted uppercase">Selected: [SENIOR_DEV_ROLE]</label>
+<label class="font-mono text-[9px] text-ink-muted uppercase">Seleccionado: [SENIOR_DEV_ROLE]</label>
 <select class="w-full bg-bg-deep border border-accent-cyan-dim text-accent-cyan font-mono text-[11px] px-3 py-2 outline-none">
-<option>Principal Engineer</option>
-<option>Staff Product Designer</option>
-<option>Quantum Systems Architect</option>
+<option>Ingeniero Principal</option>
+<option>Diseñador de Producto Staff</option>
+<option>Arquitecto de Sistemas Cuánticos</option>
 </select>
 </div>
 </div>
 </div>
 </section>
-<!-- RESULTS TAB -->
+<!-- PESTAÑA RESULTADOS -->
 <section class="tab-content p-margin-mobile space-y-8" id="tab-results">
 <div class="space-y-4">
 <div class="flex items-center justify-between border-b border-accent-cyan-dim pb-2">
-<h3 class="font-display text-sm tracking-widest text-accent-cyan">EXECUTION_LOG</h3>
+<h3 class="font-display text-sm tracking-widest text-accent-cyan">LOG_DE_EJECUCIÓN</h3>
 <div class="flex gap-4">
 <button class="material-symbols-outlined text-accent-cyan text-xl hover:scale-110 transition-transform" onclick="copyLog()">content_copy</button>
 <button class="material-symbols-outlined text-accent-cyan text-xl hover:scale-110 transition-transform" onclick="toggleFavorite(this)">star</button>
@@ -329,23 +367,23 @@ Begin execution...</div>
 <div class="bg-bg-panel border border-dashed border-accent-cyan-dim p-5 relative group overflow-hidden">
 <div class="reg-tl registration-mark"></div><div class="reg-br registration-mark"></div>
 <div class="font-mono text-[13px] text-on-surface leading-relaxed whitespace-pre-wrap max-h-64 overflow-y-auto custom-scrollbar" id="execution-result-text">
-<span class="text-accent-cyan font-bold tracking-tighter">// ARCHITECTURE PROMPT RESPONSE V2.4</span>
+<span class="text-accent-cyan font-bold tracking-tighter">// RESPUESTA DE PROMPT DE ARQUITECTURA V2.4</span>
 
-To optimize the vector embedding pipeline for the provided dataset, we recommend implementing a hybrid retrieval strategy. By combining <span class="text-stamp-orange underline underline-offset-4">BM25 lexical scoring</span> with <span class="text-accent-cyan underline underline-offset-4">Cosine Similarity</span> on dense vectors...
+Para optimizar el flujo de embeddings vectoriales para el conjunto de datos proporcionado, recomendamos implementar una estrategia de recuperación híbrida. Al combinar el <span class="text-stamp-orange underline underline-offset-4">puntaje léxico BM25</span> con la <span class="text-accent-cyan underline underline-offset-4">Similitud de Coseno</span> en vectores densos...
 
 <div class="bg-bg-deep p-4 border border-accent-cyan-dim my-4 font-mono text-[11px] text-ink-muted relative overflow-hidden">
 <div class="absolute top-0 right-0 p-1 bg-accent-cyan/10 font-mono text-[8px]">JSON</div>
 {
   "optimizer": "adamw_v2",
-  "status": "VALIDATED",
+  "status": "VALIDADO",
   "score": 0.992
 }
 </div>
-The "Stamp CTA" logic can be further refined by introducing a <span class="bg-accent-cyan/10 text-accent-cyan px-2 py-0.5 rounded">LoRA</span> layer.
+La lógica del "Stamp CTA" puede refinarse aún más introduciendo una capa <span class="bg-accent-cyan/10 text-accent-cyan px-2 py-0.5 rounded">LoRA</span>.
                     </div>
 <div class="mt-6 grid grid-cols-3 gap-3">
 <div class="border border-accent-cyan-dim/40 bg-bg-deep/50 p-3 text-center">
-<p class="font-mono text-[8px] text-ink-muted uppercase mb-1">Accuracy</p>
+<p class="font-mono text-[8px] text-ink-muted uppercase mb-1">Precisión</p>
 <p class="font-display text-xl text-accent-cyan">94%</p>
 </div>
 <div class="border border-accent-cyan-dim/40 bg-bg-deep/50 p-3 text-center">
@@ -353,41 +391,41 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
 <p class="font-display text-xl text-accent-cyan">856</p>
 </div>
 <div class="border border-accent-cyan-dim/40 bg-bg-deep/50 p-3 text-center">
-<p class="font-mono text-[8px] text-ink-muted uppercase mb-1">Latency</p>
+<p class="font-mono text-[8px] text-ink-muted uppercase mb-1">Latencia</p>
 <p class="font-display text-xl text-accent-cyan">1.8s</p>
 </div>
 </div>
 </div>
 </div>
-<!-- Comparison Section -->
+<!-- Sección de Comparación -->
 <div class="space-y-4">
 <h3 class="font-display text-sm tracking-widest text-accent-cyan flex items-center gap-2">
-<span class="w-4 h-[1px] bg-accent-cyan"></span> A/B_BENCHMARK
+<span class="w-4 h-[1px] bg-accent-cyan"></span> COMPARATIVA_A/B
                 </h3>
 <div class="space-y-4">
 <div class="bg-bg-deep border border-accent-cyan p-5 relative overflow-hidden group shadow-lg">
-<div class="absolute top-0 right-0 bg-accent-cyan text-bg-deep font-mono text-[9px] px-3 py-1 font-bold">WINNER</div>
-<p class="font-mono text-[10px] text-accent-cyan mb-3">VARIANT_B // CLAUDE_OPUS</p>
+<div class="absolute top-0 right-0 bg-accent-cyan text-bg-deep font-mono text-[9px] px-3 py-1 font-bold">GANADOR</div>
+<p class="font-mono text-[10px] text-accent-cyan mb-3">VARIANTE_B // CLAUDE_OPUS</p>
 <div class="flex justify-between items-end">
 <div>
-<p class="font-mono text-[9px] text-ink-muted uppercase tracking-widest">Precision_Score</p>
+<p class="font-mono text-[9px] text-ink-muted uppercase tracking-widest">Puntaje_Precisión</p>
 <p class="font-display text-2xl">96.8%</p>
 </div>
 <div class="text-right">
-<p class="font-mono text-[9px] text-ink-muted uppercase tracking-widest">Est_Cost</p>
+<p class="font-mono text-[9px] text-ink-muted uppercase tracking-widest">Costo_Est</p>
 <p class="font-display text-accent-cyan">$0.045</p>
 </div>
 </div>
 </div>
 <div class="bg-bg-deep border border-accent-cyan-dim p-5 opacity-60 relative group">
-<p class="font-mono text-[10px] text-ink-muted mb-3">VARIANT_A // CLAUDE_SONNET</p>
+<p class="font-mono text-[10px] text-ink-muted mb-3">VARIANTE_A // CLAUDE_SONNET</p>
 <div class="flex justify-between items-end">
 <div>
-<p class="font-mono text-[9px] text-ink-muted uppercase tracking-widest">Precision_Score</p>
+<p class="font-mono text-[9px] text-ink-muted uppercase tracking-widest">Puntaje_Precisión</p>
 <p class="font-display text-2xl">92.4%</p>
 </div>
 <div class="text-right">
-<p class="font-mono text-[9px] text-ink-muted uppercase tracking-widest">Est_Cost</p>
+<p class="font-mono text-[9px] text-ink-muted uppercase tracking-widest">Costo_Est</p>
 <p class="font-display text-accent-cyan">$0.012</p>
 </div>
 </div>
@@ -396,41 +434,41 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
 </div>
 <div class="flex justify-center py-4">
 <div class="verified-seal px-8 py-3 rounded-full">
-<span class="font-bold tracking-widest text-sm uppercase">LOG_VERIFIED_SECURE</span>
+<span class="font-bold tracking-widest text-sm uppercase">LOG_VERIFICADO_SEGURO</span>
 </div>
 </div>
 </section>
-<!-- SETUP TAB -->
+<!-- PESTAÑA AJUSTES (SETUP) -->
 <section class="tab-content p-margin-mobile space-y-8" id="tab-setup">
-<!-- User Profile -->
+<!-- Perfil de Usuario -->
 <div class="flex items-center gap-5 bg-bg-panel border border-accent-cyan-dim p-5 relative overflow-hidden">
 <div class="reg-tl registration-mark"></div>
 <div class="w-16 h-16 border border-accent-cyan p-1 bg-bg-deep flex-shrink-0">
-<img alt="Operator Portrait" class="w-full h-full object-cover brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlBXSGUSQqIPqAiB8by1l0nKe085wrF9kKB4tr9j2_BO_HO0F9P3FsIUcH0Nso2AxOWDWEMbOuyaXMUD8NQE5y3YqYuBuFvno02I9qco0YCeNX8wK3QDrvZLZ5cvgI7s0Tt4QSxddTrzAe2jTXW9TyYFqXu88sv6iWY5uYUCqbw7_99474guUOHGRR7ix4s-DORCBjrwEi2pw_Z3FqpTkJb8N-w-2UoyzrnJIZizTR4ELeVYgPrPKZWHJIqMJhEcjUuFbExaBXdIU"/>
+<img alt="Retrato del Operador" class="w-full h-full object-cover brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlBXSGUSQqIPqAiB8by1l0nKe085wrF9kKB4tr9j2_BO_HO0F9P3FsIUcH0Nso2AxOWDWEMbOuyaXMUD8NQE5y3YqYuBuFvno02I9qco0YCeNX8wK3QDrvZLZ5cvgI7s0Tt4QSxddTrzAe2jTXW9TyYFqXu88sv6iWY5uYUCqbw7_99474guUOHGRR7ix4s-DORCBjrwEi2pw_Z3FqpTkJb8N-w-2UoyzrnJIZizTR4ELeVYgPrPKZWHJIqMJhEcjUuFbExaBXdIU"/>
 </div>
 <div>
-<h4 class="font-display text-lg text-accent-cyan leading-tight uppercase">OPERATOR_042</h4>
-<p class="font-mono text-[10px] text-ink-muted uppercase tracking-widest mt-1">System Admin // Lvl 4 Auth</p>
+<h4 class="font-display text-lg text-accent-cyan leading-tight uppercase">OPERADOR_042</h4>
+<p class="font-mono text-[10px] text-ink-muted uppercase tracking-widest mt-1">Admin del Sistema // Aut. Lvl 4</p>
 </div>
 </div>
-<!-- Identity Management -->
+<!-- Gestión de Identidad -->
 <div class="space-y-4">
 <h3 class="font-mono text-[10px] text-accent-cyan flex items-center gap-2 uppercase tracking-widest">
-<span class="material-symbols-outlined text-xs" data-icon="badge">badge</span> Identity_&amp;_Access
+<span class="material-symbols-outlined text-xs" data-icon="badge">badge</span> Identidad_y_Acceso
                 </h3>
 <button class="w-full border border-accent-cyan text-accent-cyan font-mono text-[12px] py-4 uppercase flex items-center justify-center gap-3 hover:bg-accent-cyan/10 transition-all group" onclick="openSettingsModal()">
-<span class="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">key</span> Configure API Credentials
+<span class="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">key</span> Configurar Credenciales API
                 </button>
 </div>
-<!-- Statistics -->
+<!-- Estadísticas -->
 <div class="space-y-4">
 <h3 class="font-mono text-[10px] text-accent-cyan flex items-center gap-2 uppercase tracking-widest">
-<span class="material-symbols-outlined text-xs" data-icon="monitoring">monitoring</span> SYSTEM_TELEMETRY
+<span class="material-symbols-outlined text-xs" data-icon="monitoring">monitoring</span> TELEMETRÍA_DEL_SISTEMA
                 </h3>
 <div class="bg-bg-deep p-5 border border-accent-cyan-dim space-y-5">
 <div class="space-y-2">
 <div class="flex justify-between items-center">
-<span class="font-mono text-[10px] text-ink-muted uppercase tracking-tighter">Memory Allocation</span>
+<span class="font-mono text-[10px] text-ink-muted uppercase tracking-tighter">Asignación de Memoria</span>
 <span class="font-mono text-[10px] text-accent-cyan">42.4 GB / 128 GB</span>
 </div>
 <div class="h-1.5 bg-accent-cyan-dim/20 w-full rounded-full overflow-hidden">
@@ -439,8 +477,8 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
 </div>
 <div class="space-y-2">
 <div class="flex justify-between items-center">
-<span class="font-mono text-[10px] text-ink-muted uppercase tracking-tighter">GPU Compute Node</span>
-<span class="font-mono text-[10px] text-stamp-orange">88% LOAD</span>
+<span class="font-mono text-[10px] text-ink-muted uppercase tracking-tighter">Nodo de Cómputo GPU</span>
+<span class="font-mono text-[10px] text-stamp-orange">88% CARGA</span>
 </div>
 <div class="h-1.5 bg-accent-cyan-dim/20 w-full rounded-full overflow-hidden">
 <div class="h-full bg-stamp-orange w-[88%]"></div>
@@ -448,20 +486,20 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
 </div>
 </div>
 </div>
-<!-- Download Project -->
+<!-- Descargar Proyecto -->
 <div class="pt-8 border-t border-accent-cyan-dim/30">
 <button class="w-full bg-white text-bg-deep font-display font-bold py-4 text-sm flex items-center justify-center gap-2 hover:bg-ink-paper transition-colors" onclick="downloadProject()">
-<span class="material-symbols-outlined text-xl">download</span> EXPORT_WORKSPACE
+<span class="material-symbols-outlined text-xl">download</span> EXPORTAR_ESPACIO_TRABAJO
                 </button>
-<p class="font-mono text-[9px] text-ink-muted text-center mt-3 uppercase tracking-tighter">Package includes revision history and model seeds.</p>
+<p class="font-mono text-[9px] text-ink-muted text-center mt-3 uppercase tracking-tighter">El paquete incluye historial de revisiones y semillas del modelo.</p>
 </div>
 </section>
 </main>
-<!-- Bottom Navigation Bar -->
+<!-- Barra de Navegación Inferior -->
 <nav class="fixed bottom-0 left-0 w-full z-[100] flex justify-around items-stretch h-20 bg-surface border-t border-accent-cyan-dim/40 shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
 <button class="nav-btn flex-1 flex flex-col items-center justify-center text-accent-cyan border-t-2 border-accent-cyan transition-all" data-tab="dashboard" onclick="switchTab('dashboard')">
 <span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
-<span class="font-mono text-[9px] uppercase font-bold tracking-tighter">Summary</span>
+<span class="font-mono text-[9px] uppercase font-bold tracking-tighter">Resumen</span>
 </button>
 <button class="nav-btn flex-1 flex flex-col items-center justify-center text-ink-muted opacity-60 border-t-2 border-transparent transition-all" data-tab="editor" onclick="switchTab('editor')">
 <span class="material-symbols-outlined mb-1" data-icon="edit_square">edit_square</span>
@@ -469,20 +507,20 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
 </button>
 <button class="nav-btn flex-1 flex flex-col items-center justify-center text-ink-muted opacity-60 border-t-2 border-transparent transition-all" data-tab="results" onclick="switchTab('results')">
 <span class="material-symbols-outlined mb-1" data-icon="analytics">analytics</span>
-<span class="font-mono text-[9px] uppercase font-bold tracking-tighter">Results</span>
+<span class="font-mono text-[9px] uppercase font-bold tracking-tighter">Resultados</span>
 </button>
 <button class="nav-btn flex-1 flex flex-col items-center justify-center text-ink-muted opacity-60 border-t-2 border-transparent transition-all" data-tab="setup" onclick="switchTab('setup')">
 <span class="material-symbols-outlined mb-1" data-icon="manage_accounts">manage_accounts</span>
-<span class="font-mono text-[9px] uppercase font-bold tracking-tighter">Setup</span>
+<span class="font-mono text-[9px] uppercase font-bold tracking-tighter">Ajustes</span>
 </button>
 </nav>
-<!-- Floating Toast for Simulations -->
+<!-- Toast Flotante para Simulaciones -->
 <div class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-accent-cyan text-bg-deep px-6 py-3 font-mono text-xs font-bold z-[250] hidden flex items-center gap-3 shadow-2xl rounded-sm border border-white/20" id="toast">
 <span class="material-symbols-outlined text-base animate-spin-slow" id="toast-icon">sync</span>
-<span id="toast-text">SYSTEM_UPDATED</span>
+<span id="toast-text">SISTEMA_ACTUALIZADO</span>
 </div>
 <script>
-        // Modal & Scrim Logic
+        // Lógica de Modal y Scrim
         function openSettingsModal() {
             const modal = document.getElementById('settings-modal');
             const scrim = document.getElementById('scrim');
@@ -490,12 +528,12 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
             modal.classList.remove('hidden');
             scrim.classList.remove('hidden');
             
-            // Trigger animation
+            // Disparar animación
             setTimeout(() => {
                 scrim.classList.add('opacity-100');
             }, 10);
 
-            // Populate input if key exists
+            // Poblar input si la clave existe
             const savedKey = localStorage.getItem('anthropic_api_key');
             if (savedKey) {
                 document.getElementById('api-key-input').value = savedKey;
@@ -517,22 +555,22 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
             const key = document.getElementById('api-key-input').value.trim();
             if (key) {
                 localStorage.setItem('anthropic_api_key', key);
-                showToast("API_KEY_SECURED_LOCALLY", "check_circle");
+                showToast("CLAVE_API_ASEGURADA_LOCALMENTE", "check_circle");
                 closeSettingsModal();
             } else {
-                showToast("INVALID_KEY_INPUT", "error");
+                showToast("ENTRADA_DE_CLAVE_INVÁLIDA", "error");
             }
         }
 
         function switchTab(tabId) {
-            // Hide all tab contents
+            // Ocultar todos los contenidos de pestaña
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
-            // Show target tab
+            // Mostrar pestaña objetivo
             document.getElementById('tab-' + tabId).classList.add('active');
 
-            // Update nav styles
+            // Actualizar estilos de navegación
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('text-accent-cyan', 'border-accent-cyan');
                 btn.classList.add('text-ink-muted', 'opacity-60', 'border-transparent');
@@ -541,16 +579,16 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
             activeBtn.classList.add('text-accent-cyan', 'border-accent-cyan');
             activeBtn.classList.remove('text-ink-muted', 'opacity-60', 'border-transparent');
 
-            // Update title
+            // Actualizar título
             const titles = {
-                'dashboard': 'SUMMARY_SYS',
-                'editor': 'PROMPT_EDITOR',
-                'results': 'EXECUTION_RESULTS',
-                'setup': 'SYSTEM_SETUP'
+                'dashboard': 'RESUMEN_SIS',
+                'editor': 'EDITOR_DE_PROMPTS',
+                'results': 'RESULTADOS_EJECUCIÓN',
+                'setup': 'AJUSTES_SISTEMA'
             };
             document.getElementById('app-title').innerText = titles[tabId] || tabId.toUpperCase();
 
-            // Scroll to top
+            // Desplazarse arriba
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -584,8 +622,8 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
                 
                 const varSpan = document.createElement('span');
                 varSpan.className = 'syntax-variable';
-                varSpan.innerText = 'NEW_VAR';
-                varSpan.title = 'Configurable parameter';
+                varSpan.innerText = 'NUEVA_VAR';
+                varSpan.title = 'Parámetro configurable';
                 
                 const bracketEnd = document.createElement('span');
                 bracketEnd.className = 'syntax-bracket';
@@ -598,19 +636,19 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
                 range.deleteContents();
                 range.insertNode(spanContainer);
                 
-                // Move cursor after the injected element
+                // Mover cursor tras el elemento inyectado
                 range.setStartAfter(spanContainer);
                 range.setEndAfter(spanContainer);
                 selection.removeAllRanges();
                 selection.addRange(range);
                 
-                showToast("VARIABLE_REGISTERED", "add_box");
+                showToast("VARIABLE_REGISTRADA", "add_box");
                 document.getElementById('variable-config').classList.remove('hidden');
             }
         }
 
         function simulateExecution() {
-            showToast("EXECUTING_GENERATION...", "bolt");
+            showToast("EJECUTANDO_GENERACIÓN...", "bolt");
             const btn = event.currentTarget;
             btn.disabled = true;
             btn.classList.add('opacity-70');
@@ -619,44 +657,44 @@ The "Stamp CTA" logic can be further refined by introducing a <span class="bg-ac
                 btn.disabled = false;
                 btn.classList.remove('opacity-70');
                 switchTab('results');
-                showToast("STREAM_COMPLETE // REV. C", "done_all");
+                showToast("FLUJO_COMPLETO // REV. C", "done_all");
             }, 1800);
         }
 
         function copyLog() {
             const text = document.getElementById('execution-result-text').innerText;
             navigator.clipboard.writeText(text).then(() => {
-                showToast("COPY_SUCCESSFUL", "content_copy");
+                showToast("COPIA_EXITOSA", "content_copy");
             });
         }
 
         function toggleFavorite(btn) {
             const isFav = btn.style.fontVariationSettings.includes("'FILL' 1");
             btn.style.fontVariationSettings = isFav ? "'FILL' 0" : "'FILL' 1";
-            showToast(isFav ? "REMOVED_FROM_FAVORITES" : "ADDED_TO_FAVORITES", isFav ? "star_outline" : "star");
+            showToast(isFav ? "ELIMINADO_DE_FAVORITOS" : "AÑADIDO_A_FAVORITOS", isFav ? "star_outline" : "star");
         }
 
         function downloadProject() {
-            showToast("PACKAGING_WORKSPACE...", "inventory_2");
+            showToast("EMPAQUETANDO_ESPACIO...", "inventory_2");
             setTimeout(() => {
-                showToast("DOWNLOAD_INITIATED", "download");
+                showToast("DESCARGA_INICIADA", "download");
             }, 1200);
         }
 
-        // Init
+        // Iniciar
         document.addEventListener('DOMContentLoaded', () => {
-            // Visual parallax
+            // Paralaje visual
             document.addEventListener('mousemove', (e) => {
                 const x = (e.clientX / window.innerWidth - 0.5) * 15;
                 const y = (e.clientY / window.innerHeight - 0.5) * 15;
                 document.body.style.backgroundPosition = `${x}px ${y}px`;
             });
 
-            // Initial key check log
+            // Log de chequeo inicial de clave
             if(!localStorage.getItem('anthropic_api_key')) {
-                console.log("[SYSTEM] API_KEY_ABSENT. Awaiting setup.");
+                console.log("[SISTEMA] CLAVE_API_AUSENTE. Esperando configuración.");
             } else {
-                console.log("[SYSTEM] API_KEY_DETECTED. Standby.");
+                console.log("[SISTEMA] CLAVE_API_DETECTADA. En espera.");
             }
         });
     </script>
